@@ -1,0 +1,120 @@
+
+//   <div class="SongList">
+//     <h1>Song List</h1>
+    
+//     <div v-for="song in songs" v-bind:key="song.id" class="song">
+//       <div class="song-info">
+//         <p>Song: {{ song.name }}</p>
+//         <div class="artist-wrapper">
+//           <p>Artists:</p>
+//           <div v-for="artist in song.artists" :key="artist.id">
+//             <p>{{ artist.name }}</p>
+//           </div>
+//         </div>
+//         <p class="gold-star-wrapper">
+//           Stars:
+//           <img v-for="n in song.rating" :key="n" class="gold-star" src="../images\GoldStar.png" alt="Gold star">
+//         </p>   
+//       </div>
+//       <div class="song-links">
+//         <audio controls @play="setVolume">
+//           <source :src="song.preview" type="audio/mpeg">
+//           <p><a href="song.preview">Preview{{song.preview}}</a></p>
+//         </audio>
+//         <a :href="song.spotifyUri"><img src="../images\image-gallery-spotify-logo-21.png" alt="Spotify" width="56" height="56"></a>
+//       </div>
+//     </div>
+//   </div>
+
+// <div class="song-info">
+//           <div>
+//             <p5><strong>{{ song.name }}</strong></p5>
+//             <span class="stars"><img
+//                 v-for="n in song.rating"
+//                 :key="n"
+//                 class="gold-star"
+//                 src="../images/StarRating.png"
+//                 alt="Gold star"/></span>
+//             <div class="artist-wrapper">
+//               <div>
+//                 <p v-for="artist in song.artists" :key="artist.id">{{ artist.name }}</p>
+//               </div>
+//             </div>
+//           </div>
+//           <div class="Stars"></div>
+//         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export default {
+//     name: 'Playlist',
+//     props: {
+//         playlist: {
+//             type: Object,
+//             required: true
+//         }
+//     },
+//         data() {
+//         return {
+//             playlists: [{}],
+//         }
+//     },
+//     mounted() {
+//         axios.get(`http://localhost:9000/playlists/${this.$route.params.id}`)
+//         .then(response => {
+//             this.playlists = response.data;
+//         })
+//         .catch(error => {
+//             console.log(error);
+//         });
+//     },
+//     methods: {
+//         getPlaylist() {
+//             PlaylistService.get('http://localhost:9000/playlists')
+//             .then(response => {
+//                 this.playlists = response.data;
+//             })
+//             .catch(error => {
+//                 console.log(error);
+//             });
+//         },
+//         like(song) {
+//             song.likes++;
+//             axios.put(`http://localhost:9000/songs/${song.song_id}`, song)
+//             .then(response => {
+//                 console.log(response.data);
+//             })
+//             .catch(error => {
+//                 console.log(error);
+//             });
+//         },
+//         dislike(song){
+//             song.dislikes--;
+//             axios.put(`http://localhost:9000/songs/${song.song_id}`, song)
+//             .then(response => {
+//                 console.log(response.data);
+//             })
+//             .catch(error => {
+//                 console.log(error);
+//             });
+//         }
+//     }
+// }
